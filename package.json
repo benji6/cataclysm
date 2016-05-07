@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc index",
-    "test": "tsc test && node test"
+    "test": "tsc src/test --outDir test && node test/test"
   },
   "author": "Ben Hall",
   "license": "MIT",

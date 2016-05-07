@@ -1,4 +1,4 @@
-/// <reference path="./typings/main.d.ts" />
+/// <reference path="../typings/main.d.ts" />
 
 import * as test from 'tape'
 import {compose, curry, flip, tap} from './'
