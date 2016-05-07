@@ -1,4 +1,6 @@
-import test from 'tape'
+/// <reference path="./typings/main.d.ts" />
+
+import * as test from 'tape'
 import {compose, curry, flip, tap} from './'
 
 const syncTest = (name, f) => test(name, t => (f(t), t.end()))
