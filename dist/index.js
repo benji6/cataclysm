@@ -1,4 +1,8 @@
 "use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(require('./clamp'));
 exports.compose = function () {
     var fns = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -15,4 +19,3 @@ exports.curry = function (f) { return function () {
 }; };
 exports.flip = function (f) { return exports.curry(function (a, b) { return f(b, a); }); };
 exports.tap = function (f) { return function (x) { return (f(x), x); }; };
-// clamp function
