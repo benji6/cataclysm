@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -r dist && mkdir dist && tsc src/index --outDir dist",
-    "test": "tsc src/test --outDir test && node test/test"
+    "test": "tsc src/test --outDir test && node test/test",
+    "watch-test": "nodemon --exec npm t"
   },
   "author": "Ben Hall",
   "license": "MIT",
   "devDependencies": {
+    "nodemon": "^1.9.2",
     "tape": "^4.5.1",
     "typescript": "^1.8.10"
   }
