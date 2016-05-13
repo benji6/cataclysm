@@ -1,39 +1,14 @@
 /// <reference path="../typings/main.d.ts" />
 
 import * as test from 'tape'
-import {clamp, compose, curry, flip, merge, tap} from './'
+import {clamp, flip, merge, tap} from './'
 
 const syncTest = (name, f) => test(name, t => (f(t), t.end()))
-const add = (a, b) => a + b
-
-const curriedAdd = a => b => a + b;
 
 syncTest('clamp', t => {
   t.is(clamp(1)(2)(3), 2)
   t.is(clamp(1)(2)(0), 1)
   t.is(clamp(1)(2)(1.5), 1.5)
-})
-
-syncTest('merge', t => {
-  t.deepEqual(merge({})({}), {})
-  t.deepEqual(merge({a: 5})({b: 6}), {a: 5, b: 6})
-  t.deepEqual(merge({a: 5, b: 7})({b: 6}), {a: 5, b: 7})
-})
-
-syncTest('compose', t => {
-  const add1 = curriedAdd(1);
-  const add2 = curriedAdd(2);
-  const add3 = curriedAdd(3);
-  t.equals(10, compose(add1, add2, add3)(4))
-})
-
-syncTest('curry', t => {
-  const autioCurriedAdd = curry(add);
-  const add1 = autioCurriedAdd(1);
-  t.equals(5, autioCurriedAdd(2, 3))
-  t.equals(5, autioCurriedAdd(2)(3))
-  t.equals(5, add1(4))
-  t.equals(5, add1(4))
 })
 
 syncTest('flip', t => {
@@ -42,6 +17,12 @@ syncTest('flip', t => {
   t.equals(-2, subtract(3)(5))
   t.equals(2, flippedSubtract(3)(5))
   t.equals(2, flippedSubtract(3)(5))
+})
+
+syncTest('merge', t => {
+  t.deepEqual(merge({})({}), {})
+  t.deepEqual(merge({a: 5})({b: 6}), {a: 5, b: 6})
+  t.deepEqual(merge({a: 5, b: 7})({b: 6}), {a: 5, b: 7})
 })
 
 syncTest('tap', t => {

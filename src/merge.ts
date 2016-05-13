@@ -1,1 +1,1 @@
-export const merge = (objA: Object) => (objB: Object) => (<any>Object).assign({}, objB, objA)
+export default (objA: Object) => (objB: Object) => (<any>Object).assign({}, objB, objA)

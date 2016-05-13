@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc src/index --outDir dist",
+    "build": "rm -r dist && mkdir dist && tsc src/index --outDir dist",
     "test": "tsc src/test --outDir test && node test/test"
   },
   "author": "Ben Hall",

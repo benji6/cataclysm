@@ -1,8 +1,12 @@
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(require('./clamp'));
+var clamp_1 = require('./clamp');
+exports.clamp = clamp_1["default"];
+var flip_1 = require('./flip');
+exports.flip = flip_1["default"];
+var merge_1 = require('./merge');
+exports.merge = merge_1["default"];
+var tap_1 = require('./tap');
+exports.tap = tap_1["default"];
 exports.compose = function () {
     var fns = [];
     for (var _i = 0; _i < arguments.length; _i++) {
@@ -17,5 +21,3 @@ exports.curry = function (f) { return function () {
     }
     return xs.length < f.length ? exports.curry(f.bind.apply(f, [null].concat(xs))) : f.apply(void 0, xs);
 }; };
-exports.flip = function (f) { return exports.curry(function (a, b) { return f(b, a); }); };
-exports.tap = function (f) { return function (x) { return (f(x), x); }; };
