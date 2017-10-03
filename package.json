@@ -2,7 +2,7 @@
   "name": "cataclysm",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist",
   "scripts": {
     "build": "rm -r dist && mkdir dist && tsc src/index --outDir dist",
     "test": "tsc src/test --outDir test && node test/test",
