@@ -30,15 +30,18 @@ syncTest('flip', t => {
 })
 
 syncTest('map', t => {
-  t.deepEqual(map(add(1))([1, 2, 3]), [2, 3, 4])
+  t.deepEqual(map(add(1), [1, 2, 3]), [2, 3, 4])
+  t.deepEqual(map(add(1))([1, 2, 3]), [2, 3, 4], 'is autocurried')
 })
 
 syncTest('merge', t => {
-  t.deepEqual(merge({})({}), {})
-  t.deepEqual(merge({a: 5})({b: 6}), {a: 5, b: 6})
-  t.deepEqual(merge({a: 5, b: 7})({b: 6}), {a: 5, b: 7})
+  t.deepEqual(merge({}, {}), {})
+  t.deepEqual(merge({a: 5}, {b: 6}), {a: 5, b: 6})
+  t.deepEqual(merge({a: 5, b: 7}, {b: 6}), {a: 5, b: 7})
+  t.deepEqual(merge({a: 5, b: 7})({b: 6}), {a: 5, b: 7}, 'is autocurried')
 })
 
 syncTest('tap', t => {
-  t.equals(42, tap(x => 3)(42))
+  t.equals(42, tap(x => 3, 42))
+  t.equals(42, tap(x => 3)(42), 'is autocurried')
 })
