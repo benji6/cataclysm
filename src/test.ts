@@ -12,9 +12,12 @@ const syncTest = (name, f) => test(name, t => (f(t), t.end()))
 const add = (a: number) => (b: number) => a + b
 
 syncTest('clamp', t => {
-  t.is(clamp(1)(2)(3), 2)
-  t.is(clamp(1)(2)(0), 1)
-  t.is(clamp(1)(2)(1.5), 1.5)
+  t.is(clamp(1, 2, 3), 2)
+  t.is(clamp(1, 2, 0), 1)
+  t.is(clamp(1, 2, 1.5), 1.5)
+  t.is(clamp(1, 2)(3), 2, 'is autocurried')
+  t.is(clamp(1)(2, 3), 2, 'is autocurried')
+  t.is(clamp(1)(2)(3), 2, 'is autocurried')
 })
 
 syncTest('comp', t => {
