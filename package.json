@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rm -rf dist && mkdir dist && tsc src/index --outDir dist",
     "test": "tsc src/test --outDir test && node test/test",
-    "watch-test": "nodemon --exec npm t"
+    "test:watch": "nodemon --exec npm t"
   },
   "author": "Ben Hall",
   "license": "MIT",
