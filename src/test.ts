@@ -26,11 +26,10 @@ syncTest('comp', t => {
 })
 
 syncTest('flip', t => {
-  const subtract = (a: number) => (b: number) => a - b
+  const subtract = (a: number, b: number): number => a - b
   const flippedSubtract = flip(subtract);
-  t.equals(-2, subtract(3)(5))
-  t.equals(2, flippedSubtract(3)(5))
-  t.equals(2, flippedSubtract(3)(5))
+  t.equals(-2, subtract(3, 5))
+  t.equals(2, flippedSubtract(3, 5))
 })
 
 syncTest('map', t => {
