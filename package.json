@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist",
   "scripts": {
-    "build": "rm -r dist && mkdir dist && tsc src/index --outDir dist",
+    "build": "rm -rf dist && mkdir dist && tsc src/index --outDir dist",
     "test": "tsc src/test --outDir test && node test/test",
     "watch-test": "nodemon --exec npm t"
   },
