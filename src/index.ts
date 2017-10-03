@@ -1,15 +1,6 @@
-import clamp from './clamp'
-import comp from './comp'
-import flip from './flip'
-import map from './map'
-import merge from './merge'
-import tap from './tap'
-
-export {
-  clamp,
-  comp,
-  flip,
-  map,
-  merge,
-  tap,
-}
+export {default as clamp} from './clamp'
+export {default as comp} from './comp'
+export {default as flip} from './flip'
+export {default as map} from './map'
+export {default as merge} from './merge'
+export {default as tap} from './tap'
