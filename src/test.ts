@@ -21,7 +21,8 @@ syncTest('clamp', t => {
 })
 
 syncTest('comp', t => {
-  t.is(comp(a => a + 2)(b => b + 3)(1), 6)
+  t.is(comp(a => a + 2, b => b + 3)(1), 6)
+  t.is(comp(a => a + 2)(b => b + 3)(1), 6, 'is autocurried')
 })
 
 syncTest('flip', t => {
