@@ -1,5 +1,3 @@
-/// <reference path="../typings/main.d.ts" />
-
 import * as test from 'tape'
 import {clamp, flip, map, merge, tap} from './'
 
