@@ -1,5 +1,12 @@
 import * as test from 'tape'
-import {clamp, flip, map, merge, tap} from './'
+import {
+  clamp,
+  comp,
+  flip,
+  map,
+  merge,
+  tap,
+} from './'
 
 const syncTest = (name, f) => test(name, t => (f(t), t.end()))
 const add = (a: number) => (b: number) => a + b
@@ -8,6 +15,10 @@ syncTest('clamp', t => {
   t.is(clamp(1)(2)(3), 2)
   t.is(clamp(1)(2)(0), 1)
   t.is(clamp(1)(2)(1.5), 1.5)
+})
+
+syncTest('comp', t => {
+  t.is(comp(a => a + 2)(b => b + 3)(1), 6)
 })
 
 syncTest('flip', t => {

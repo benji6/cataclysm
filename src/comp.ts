@@ -1,0 +1,1 @@
+export default (f: Function) => (g: Function) => (...args: any[]): any => f(g(...args))
