@@ -3,6 +3,7 @@ import {
   clamp,
   comp,
   flip,
+  I,
   map,
   merge,
   tap,
@@ -30,6 +31,10 @@ syncTest('flip', t => {
   const flippedSubtract = flip(subtract);
   t.equals(-2, subtract(3, 5))
   t.equals(2, flippedSubtract(3, 5))
+})
+
+syncTest('I', t => {
+  t.strictEqual(I(3), 3)
 })
 
 syncTest('map', t => {
