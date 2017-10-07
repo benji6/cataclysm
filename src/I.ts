@@ -1,1 +1,1 @@
-export default <A>(a: A) => a;
+export default <A>(a: A) => a
