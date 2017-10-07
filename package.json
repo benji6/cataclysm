@@ -11,6 +11,7 @@
   "author": "Ben Hall",
   "license": "MIT",
   "devDependencies": {
+    "@types/tape": "^4.2.30",
     "nodemon": "^1.9.2",
     "tape": "^4.5.1",
     "typescript": "^2.5.3"

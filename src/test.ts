@@ -8,7 +8,7 @@ import {
   tap,
 } from './'
 
-const syncTest = (name, f) => test(name, t => (f(t), t.end()))
+const syncTest = (name: string, f: (t: test.Test) => void) => test(name, t => (f(t), t.end()))
 const add = (a: number) => (b: number) => a + b
 
 syncTest('clamp', t => {
@@ -21,8 +21,8 @@ syncTest('clamp', t => {
 })
 
 syncTest('comp', t => {
-  t.is(comp(a => a + 2, b => b + 3)(1), 6)
-  t.is(comp(a => a + 2)(b => b + 3)(1), 6, 'is autocurried')
+  t.is(comp((a: number) => a + 2, (b: number) => b + 3)(1), 6)
+  t.is(comp((a: number) => a + 2)((b: number) => b + 3)(1), 6, 'is autocurried')
 })
 
 syncTest('flip', t => {
@@ -45,6 +45,6 @@ syncTest('merge', t => {
 })
 
 syncTest('tap', t => {
-  t.equals(42, tap(x => 3, 42))
-  t.equals(42, tap(x => 3)(42), 'is autocurried')
+  t.equals(42, tap((x: number) => 3, 42))
+  t.equals(42, tap((x: number) => 3)(42), 'is autocurried')
 })
