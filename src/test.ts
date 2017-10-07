@@ -27,10 +27,10 @@ syncTest('comp', t => {
 })
 
 syncTest('flip', t => {
-  const subtract = (a: number, b: number): number => a - b
-  const flippedSubtract = flip(subtract);
-  t.equals(-2, subtract(3, 5))
-  t.equals(2, flippedSubtract(3, 5))
+  const nth = (i: number, xs: number[]): number => xs[i]
+  const flippedNth = flip(nth)
+  t.equals(nth(1, [1,2,3]), 2)
+  t.equals(flippedNth([1,2,3], 1), 2)
 })
 
 syncTest('I', t => {

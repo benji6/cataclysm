@@ -1,4 +1,4 @@
-export default (f: Function) => (...args: any[]): any => {
+export default (f: (a: any, b: any, c: any) => any) => (...args: any[]): any => {
   switch (args.length) {
     case 1:
       return (...nextArgs: any[]): any => nextArgs.length === 1
