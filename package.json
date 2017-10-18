@@ -5,7 +5,8 @@
   "main": "dist",
   "scripts": {
     "build": "rm -rf dist && mkdir dist && tsc src/index --outDir dist",
-    "test": "tsc src/test --outDir test && node test/test",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "test": "npm run lint && tsc src/test --outDir test && node test/test",
     "test:watch": "nodemon --exec npm t"
   },
   "author": "Ben Hall",
@@ -14,6 +15,8 @@
     "@types/tape": "^4.2.30",
     "nodemon": "^1.9.2",
     "tape": "^4.5.1",
+    "tslint": "^5.7.0",
+    "tslint-config-benji6": "^0.1.2",
     "typescript": "^2.5.3"
   }
 }

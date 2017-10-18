@@ -4,5 +4,5 @@ export default curry2(
     const ys = []
     for (let i = 0; i < xs.length; i++) ys[i] = f(xs[i])
     return ys
-  }
+  },
 )
