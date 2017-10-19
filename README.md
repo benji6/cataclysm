@@ -5,3 +5,7 @@
 ## Design Principles
 
 - Static type checking over dynamic type checking
+- Functions are pure and side-effect free
+- Functions never mutate data
+- All functions are auto-curried
+- No external dependencies
