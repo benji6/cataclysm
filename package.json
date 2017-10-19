@@ -5,16 +5,36 @@
   "main": "dist",
   "scripts": {
     "build": "rm -rf dist && mkdir dist && tsc src/index --outDir dist",
+    "jest": "jest",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
-    "test": "npm run lint && tsc src/test --outDir test && node test/test",
+    "test": "npm run lint && npm run jest",
     "test:watch": "nodemon --exec npm t"
   },
   "author": "Ben Hall",
   "license": "MIT",
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true
+      }
+    },
+    "transform": {
+      "^.+\\.ts$": "./node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  },
   "devDependencies": {
-    "@types/tape": "^4.2.30",
+    "@types/jest": "^21.1.4",
+    "jest": "^21.2.1",
     "nodemon": "^1.9.2",
-    "tape": "^4.5.1",
+    "ts-jest": "^21.1.3",
     "tslint": "^5.7.0",
     "tslint-config-benji6": "^0.1.2",
     "typescript": "^2.5.3"
