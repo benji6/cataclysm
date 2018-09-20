@@ -1,5 +1,5 @@
 import curry2 from './internal/curry2'
 
-const merge = (objA: Object, objB: Object): Object => ({...objB, ...objA})
+const merge = (objA: object, objB: object): object => ({ ...objB, ...objA })
 
 export default curry2(merge)

@@ -1,3 +1,7 @@
 {
-  "extends": "tslint-config-benji6"
+  "extends": ["tslint:latest", "tslint-eslint-rules", "tslint-config-prettier"],
+  "rules": {
+    "ban-comma-operator": false,
+    "curly": [true, "ignore-same-line"]
+  }
 }

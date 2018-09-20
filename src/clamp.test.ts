@@ -7,7 +7,7 @@ describe('clamp', () => {
     expect(clamp(1, 2, 1.5)).toBe(1.5)
   })
 
-  it ('is autocurried', () => {
+  it('is autocurried', () => {
     expect(clamp(1, 2)(3)).toBe(2)
     expect(clamp(1)(2, 3)).toBe(2)
     expect(clamp(1)(2)(3)).toBe(2)
