@@ -1,13 +1,13 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "noImplicitAny": true,
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "strictNullChecks": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
+    "outDir": "dist",
+    "strict": true,
+    "target": "es5"
+  }
 }
