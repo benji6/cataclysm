@@ -1,1 +1,1 @@
-export default <A, B>(f: (a: A, b: B) => any) => (a: B, b: A) => f(b, a)
+export default <A, B, C>(f: (a: A, b: B) => C) => (a: B, b: A): C => f(b, a)

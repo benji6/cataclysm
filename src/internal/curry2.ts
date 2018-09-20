@@ -1,2 +1,6 @@
-export default (f: (a: any, b: any) => any) => (...args: any[]): any =>
-  args.length === 1 ? (x: any): any => f(args[0], x) : f(args[0], args[1])
+// tslint:disable ban-types
+
+export default <A, B, C>(f: Function) => (...args: Array<A | B>) =>
+  args.length === 1
+    ? (x: B): C => f(args[0] as A, x)
+    : f(args[0] as A, args[1] as B)

@@ -1,15 +1,15 @@
-export default (f: (a: any, b: any, c: any) => any) => (
-  ...args: any[]
-): any => {
+// tslint:disable ban-types
+
+export default <A, B, C, D>(f: Function) => (...args: Array<A | B | C>) => {
   switch (args.length) {
     case 1:
-      return (...nextArgs: any[]): any =>
+      return (...nextArgs: Array<B | C>) =>
         nextArgs.length === 1
-          ? (x: any): any => f(args[0], nextArgs[0], x)
-          : f(args[0], nextArgs[0], nextArgs[1])
+          ? (x: C): D => f(args[0] as A, nextArgs[0] as B, x as C)
+          : f(args[0] as A, nextArgs[0] as B, nextArgs[1] as C)
     case 2:
-      return (x: any): any => f(args[0], args[1], x)
+      return (x: C): D => f(args[0] as A, args[1] as B, x)
     default:
-      return f(args[0], args[1], args[2])
+      return f(args[0] as A, args[1] as B, args[2] as C)
   }
 }
